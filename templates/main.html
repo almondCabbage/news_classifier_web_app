@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>News Classifier</title>
-		<center><h1>News Category Classifier</h1></center>
+		<title>News Reader</title>
+		<center><h1>News Reader Application</h1></center>
 		<style>
 body {
   background-color: lightblue;
@@ -28,8 +28,10 @@ p {
 			<b>Enter news text to classify news into the following categories</b>				
 		</legend>
 				
-		'WELLNESS', 'POLITICS', 'ENTERTAINMENT', 'TRAVEL','STYLE & BEAUTY', 
-		'PARENTING', 'FOOD & DRINK', 'WORLD NEWS', 'BUSINESS' and 'SPORTS'
+		'HEALTH' 'WEATHER' 'WORLD' 'INVESTIGATIONS' 'CULTURE' 'SCIENCE' 'LGBTQ'
+ 'LATIN-AMERICA' 'AFRO-AMERICAN' 'ASIAN - AMERICAN' 'WELLNESS' 'POLITICS'
+ 'BUSINESS' 'ENTERTAINMENT' 'TRAVEL' 'STYLE & BEAUTY' 'PARENTING'
+ 'FOOD & DRINK' 'WORLD NEWS' 'SPORTS'
 		<br><br>
 				
 		Have fun!
@@ -54,7 +56,25 @@ p {
 		<br>
 		<br> 
 		<p style="font-size:20px"><b>Predicted News Category: </b></p>
-		<p style="font-size:50px">{{ result }}</p>
+		<p style="font-size:50px">{{ result[0] }}</p>
+		<table border='1'>
+			<tr>
+				<th>90/Die</th>
+				<th>LINKE </th>
+				<th>FDP </th>
+				<th>CDU/CSU</th>
+				<th>SPD </th>
+				<th>AfD </th>
+			</tr>
+			<tr>
+				<th>{{ result[1][0] }}</th>
+				<th>{{ result[1][1] }}</th>
+				<th>{{ result[1][2] }}</th>
+				<th>{{ result[1][3] }}</th>
+				<th>{{ result[1][4] }}</th>
+				<th>{{ result[1][5] }}</th>
+			</tr>
+		</table>
 	{% endif %}
 </div>
 </body>
